@@ -32,6 +32,15 @@
     font-family:"Noto Sans JP",sans-serif;
     line-height:1.9;
     overflow-x:hidden;
+    overflow-wrap:anywhere;
+  }
+  /* flex/grid children default to a min-width of their content's natural
+     width, which can push long unbroken text (phone numbers, account
+     numbers, English labels) past the viewport on narrow phones even with
+     overflow-wrap set. Forcing min-width:0 lets them shrink and wrap instead. */
+  .nav-inner > *, .hero .meta > *, .cards > *, .story-grid > *,
+  .support-grid > *, .vol-grid > *, .access-grid > *, .t-item > *{
+    min-width:0;
   }
   h1,h2,h3,.brush{
     font-family:"Shippori Mincho",serif;
@@ -208,7 +217,8 @@
   /* access */
   .access-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start;}
   @media(max-width:800px){.access-grid{grid-template-columns:1fr;}}
-  .parking-table{width:100%;border-collapse:collapse;font-size:.92rem;}
+  .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .parking-table{width:100%;min-width:280px;border-collapse:collapse;font-size:.92rem;}
   .parking-table th,.parking-table td{
     text-align:left;padding:12px 10px;border-bottom:1px solid rgba(212,175,106,.2);
   }
@@ -454,15 +464,17 @@
     </div>
     <div class="access-grid">
       <div>
-        <table class="parking-table">
-          <thead><tr><th>駐車場</th><th>台数目安</th></tr></thead>
-          <tbody>
-            <tr><td>竹花工業株式会社様</td><td>約20台</td></tr>
-            <tr><td>下平一心館(農村環境改善センター)</td><td>約100台</td></tr>
-            <tr><td>日進乳業株式会社 アルプス工場様</td><td>約110台</td></tr>
-            <tr><td>長春寺様</td><td>約30台</td></tr>
-          </tbody>
-        </table>
+        <div class="table-scroll">
+          <table class="parking-table">
+            <thead><tr><th>駐車場</th><th>台数目安</th></tr></thead>
+            <tbody>
+              <tr><td>竹花工業株式会社様</td><td>約20台</td></tr>
+              <tr><td>下平一心館(農村環境改善センター)</td><td>約100台</td></tr>
+              <tr><td>日進乳業株式会社 アルプス工場様</td><td>約110台</td></tr>
+              <tr><td>長春寺様</td><td>約30台</td></tr>
+            </tbody>
+          </table>
+        </div>
         <a class="btn" href="assets/chirashi.pdf" target="_blank" rel="noopener">周辺地図付きチラシ(PDF)を見る</a>
       </div>
       <div class="card">
