@@ -193,6 +193,18 @@
   .notice ul{list-style:none;}
   .notice li::before{content:"※ ";color:var(--gold);}
 
+  .poster-preview{
+    max-width:340px;margin:40px auto 0;text-align:center;cursor:pointer;
+  }
+  .poster-preview img{
+    width:100%;border-radius:6px;border:1px solid rgba(212,175,106,.3);
+    box-shadow:0 12px 32px rgba(0,0,0,.45);transition:transform .3s;
+  }
+  .poster-preview:hover img{transform:scale(1.02);}
+  .poster-preview figcaption{
+    margin-top:14px;font-size:.78rem;letter-spacing:.08em;color:var(--ink-dim);
+  }
+
   /* access */
   .access-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start;}
   @media(max-width:800px){.access-grid{grid-template-columns:1fr;}}
@@ -426,6 +438,10 @@
         <li>観覧エリアや駐車場、危険区域エリアでのトラブルは実行委員会では責任を負いかねますので、あらかじめご了承ください。</li>
       </ul>
     </div>
+    <figure class="poster-preview lightbox-trigger" data-full="assets/images/poster.jpg">
+      <img src="assets/images/poster.jpg" loading="lazy" alt="第4回信州駒ヶ根花火大会 公式ポスター">
+      <figcaption>タップして拡大 — 公式ポスター</figcaption>
+    </figure>
   </section>
 
   <div class="divider"></div>
@@ -649,7 +665,7 @@
 
   const lightbox = document.getElementById('lightbox');
   const lbImg = document.getElementById('lbImg');
-  document.querySelectorAll('#galleryGrid figure').forEach(fig => {
+  document.querySelectorAll('#galleryGrid figure, .lightbox-trigger').forEach(fig => {
     fig.addEventListener('click', () => {
       lbImg.src = fig.dataset.full;
       lightbox.classList.add('open');
