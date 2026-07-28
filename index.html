@@ -215,6 +215,18 @@
   }
 
   /* access */
+  .map-preview{
+    max-width:640px;margin:0 auto 44px;text-align:center;cursor:pointer;
+  }
+  .map-preview img{
+    width:100%;border-radius:6px;border:1px solid rgba(212,175,106,.3);
+    box-shadow:0 12px 32px rgba(0,0,0,.45);transition:transform .3s;
+    background:#fff;
+  }
+  .map-preview:hover img{transform:scale(1.02);}
+  .map-preview figcaption{
+    margin-top:14px;font-size:.78rem;letter-spacing:.08em;color:var(--ink-dim);
+  }
   .access-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start;}
   @media(max-width:800px){.access-grid{grid-template-columns:1fr;}}
   .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
@@ -444,7 +456,7 @@
     <div class="notice">
       <ul>
         <li>指定観覧エリアは設けておりません。危険区域エリアでのご観覧はお避けください。</li>
-        <li>8月14日は花火準備のため、おもしろかっぱ館の一般来場者への駐車場と広場利用は閉鎖されます。</li>
+        <li>8月14日のPM4:00以降は、花火準備のため、おもしろかっぱ館の一般来場者への駐車場と広場利用は閉鎖されます。</li>
         <li>観覧エリアや駐車場、危険区域エリアでのトラブルは実行委員会では責任を負いかねますので、あらかじめご了承ください。</li>
       </ul>
     </div>
@@ -462,19 +474,24 @@
       <h2>アクセス・駐車場</h2>
       <div class="bar"></div>
     </div>
+    <figure class="map-preview lightbox-trigger" data-full="assets/images/access-map.jpg">
+      <img src="assets/images/access-map.jpg" loading="lazy" alt="周辺地図(P-1〜P-4駐車場位置)">
+      <figcaption>タップして拡大 — 周辺地図</figcaption>
+    </figure>
     <div class="access-grid">
       <div>
         <div class="table-scroll">
           <table class="parking-table">
             <thead><tr><th>駐車場</th><th>台数目安</th></tr></thead>
             <tbody>
-              <tr><td>竹花工業株式会社様</td><td>約20台</td></tr>
-              <tr><td>下平一心館(農村環境改善センター)</td><td>約100台</td></tr>
-              <tr><td>日進乳業株式会社 アルプス工場様</td><td>約110台</td></tr>
-              <tr><td>長春寺様</td><td>約30台</td></tr>
+              <tr><td>P-1 竹花工業株式会社様</td><td>約10台</td></tr>
+              <tr><td>P-2 下平一心館(農村環境改善センター)</td><td>約100台</td></tr>
+              <tr><td>P-3 日進乳業株式会社 アルプス工場様</td><td>約110台</td></tr>
+              <tr><td>P-4 長春寺様</td><td>約30台</td></tr>
             </tbody>
           </table>
         </div>
+        <p style="margin-top:16px;font-size:.85rem;color:var(--ink-dim);">駐車場開門 PM5:00 P-1から順次ご案内します。</p>
         <a class="btn" href="assets/chirashi.pdf" target="_blank" rel="noopener">周辺地図付きチラシ(PDF)を見る</a>
       </div>
       <div class="card">
@@ -564,7 +581,7 @@
     <div class="cards vol-grid">
       <div class="card">
         <div class="label">活動日</div>
-        <div class="value">8/13(木) 説明会</div>
+        <div class="value">8/13(木) PM2:00〜 説明会</div>
         <div class="sub">8/14(金) PM2:00〜PM9:00頃<br>8/15(土) 朝:片付け</div>
       </div>
       <div class="card">
